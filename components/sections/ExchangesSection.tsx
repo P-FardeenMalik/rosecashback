@@ -63,8 +63,12 @@ export default function ExchangesSection() {
                 <div key={exchange._id} className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-all">
                     <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center gap-3">
-                            <div className={`w-12 h-12 bg-gradient-to-br ${exchangeColors[exchange.exchangeName] || 'from-gray-500 to-gray-700'} rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg`}>
-                                {exchange.exchangeName.charAt(0)}
+                            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center overflow-hidden shadow-lg">
+                                <img
+                                    src={`/logos/${exchange.exchangeName.toLowerCase()}.${exchange.exchangeName === 'Bitget' || exchange.exchangeName === 'LBank' ? 'jpg' : 'webp'}`}
+                                    alt={`${exchange.exchangeName} logo`}
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                             <div>
                                 <h4 className="font-semibold text-white">{exchange.exchangeName}</h4>

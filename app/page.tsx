@@ -167,16 +167,20 @@ export default function HomePage() {
             {/* Exchange Logos */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
               {[
-                { name: 'Bybit', color: 'from-orange-500 to-yellow-500' },
-                { name: 'OKX', color: 'from-gray-700 to-gray-900' },
-                { name: 'Mexc', color: 'from-blue-600 to-purple-600' },
-                { name: 'BingX', color: 'from-cyan-500 to-blue-500' },
-                { name: 'Bitget', color: 'from-pink-500 to-rose-500' },
-                { name: 'Lbank', color: 'from-yellow-500 to-orange-500' },
+                { name: 'Bybit', logo: '/logos/bybit.webp' },
+                { name: 'OKX', logo: '/logos/okx.webp' },
+                { name: 'MEXC', logo: '/logos/mexc.webp' },
+                { name: 'BingX', logo: '/logos/bingx.webp' },
+                { name: 'Bitget', logo: '/logos/bitget.jpg' },
+                { name: 'LBank', logo: '/logos/lbank.jpg' },
               ].map((exchange) => (
                 <div key={exchange.name} className="group cursor-pointer">
-                  <div className={`bg-gradient-to-br ${exchange.color} rounded-2xl p-6 sm:p-8 aspect-square flex items-center justify-center transform transition-all group-hover:scale-105 group-hover:shadow-2xl`}>
-                    <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{exchange.name}</span>
+                  <div className="bg-white rounded-2xl aspect-square flex items-center justify-center transform transition-all group-hover:scale-105 group-hover:shadow-2xl overflow-hidden">
+                    <img
+                      src={exchange.logo}
+                      alt={`${exchange.name} logo`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <p className="text-center mt-3 text-sm sm:text-base text-gray-300 font-semibold">{exchange.name}</p>
                 </div>
