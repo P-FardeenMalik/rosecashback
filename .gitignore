@@ -6,6 +6,9 @@
 .pnp.js
 .yarn/install-state.gz
 
+# scripts (not needed for production)
+/scripts
+
 # testing
 /coverage
 
